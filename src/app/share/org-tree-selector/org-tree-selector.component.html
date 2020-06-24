@@ -1,1 +1,6 @@
-<p>org-tree-selector works!</p>
+<nz-tree [nzData]="treeData"
+         [nzAsyncData]="true"
+         [nzShowLine]="true"
+         (nzClick)="mouseAction($event)"
+         (nzExpandChange)="mouseAction($event)">
+</nz-tree>
