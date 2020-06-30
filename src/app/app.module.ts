@@ -6,6 +6,7 @@ import {registerLocaleData} from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import {CoreModule} from './core/core.module';
 import {ShareModule} from './share/share.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 registerLocaleData(zh);
 
@@ -14,6 +15,7 @@ registerLocaleData(zh);
     AppComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     CoreModule,
     ShareModule,
   ],
