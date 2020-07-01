@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../../model/user';
-import {UserService} from "../service/user.service";
+import {UserService} from '../service/user.service';
 
 @Component({
   selector: 'app-user-address-book',
@@ -32,7 +32,7 @@ export class UserAddressBookComponent implements OnInit {
     }
   }
 
-  private isSelected(user: User): boolean {
+  isSelected(user: User): boolean {
     return !!this.selectedUsers.find($user => $user.userId === user.userId);
   }
 }
