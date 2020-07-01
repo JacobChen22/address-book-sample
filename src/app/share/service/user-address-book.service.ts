@@ -17,6 +17,7 @@ export class UserAddressBookService {
       nzContent: UserAddressBookComponent,
       nzWidth: '580px',
       nzMaskClosable: false,
+      nzKeyboard: false,
       nzComponentParams: {
         selectedUsers: [...users]
       }
