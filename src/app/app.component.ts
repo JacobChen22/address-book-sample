@@ -1,6 +1,4 @@
 import {Component} from '@angular/core';
-import {UserAddressBookService} from './share/service/user-address-book.service';
-import {User} from './model/user';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +7,9 @@ import {User} from './model/user';
 })
 export class AppComponent {
 
-  selectedUser: User[] = [];
-
-  constructor(private userAddressBookService: UserAddressBookService) {
+  constructor() {
   }
 
   title = 'address-book-sample';
 
-  openAddressBookDialog() {
-    this.userAddressBookService.select(this.selectedUser).subscribe(res => {
-      this.selectedUser = res;
-    });
-  }
 }
