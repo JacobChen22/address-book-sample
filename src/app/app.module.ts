@@ -7,7 +7,7 @@ import zh from '@angular/common/locales/zh';
 import {CoreModule} from './core/core.module';
 import {ShareModule} from './share/share.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NzButtonModule, NzModalService} from 'ng-zorro-antd';
+import {NzButtonModule} from 'ng-zorro-antd';
 
 registerLocaleData(zh);
 
@@ -21,9 +21,7 @@ registerLocaleData(zh);
     ShareModule,
     NzButtonModule,
   ],
-  providers: [
-    {provide: NZ_I18N, useValue: zh_CN},
-    NzModalService],
+  providers: [{provide: NZ_I18N, useValue: zh_CN}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

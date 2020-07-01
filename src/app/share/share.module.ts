@@ -3,9 +3,10 @@ import {CommonModule} from '@angular/common';
 import {OrgTreeSelectorComponent} from './org-tree-selector/org-tree-selector.component';
 import {UserAddressBookComponent} from './user-address-book/user-address-book.component';
 import {FormsModule} from '@angular/forms';
-import {NzIconModule, NzInputModule, NzSelectModule, NzTreeModule} from 'ng-zorro-antd';
+import {NzIconModule, NzInputModule, NzModalService, NzSelectModule, NzTreeModule} from 'ng-zorro-antd';
 import {UserService} from './service/user.service';
 import {OrgService} from './service/org.service';
+import {UserAddressBookService} from './service/user-address-book.service';
 
 
 @NgModule({
@@ -27,7 +28,9 @@ import {OrgService} from './service/org.service';
   ],
   providers: [
     UserService,
-    OrgService
+    OrgService,
+    NzModalService,
+    UserAddressBookService
   ]
 })
 export class ShareModule {

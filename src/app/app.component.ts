@@ -1,6 +1,6 @@
-import {Component, ViewContainerRef} from '@angular/core';
-import {NzModalService} from 'ng-zorro-antd';
-import {UserAddressBookComponent} from './share/user-address-book/user-address-book.component';
+import {Component} from '@angular/core';
+import {UserAddressBookService} from './share/service/user-address-book.service';
+import {User} from './model/user';
 
 @Component({
   selector: 'app-root',
@@ -9,35 +9,16 @@ import {UserAddressBookComponent} from './share/user-address-book/user-address-b
 })
 export class AppComponent {
 
-  constructor(private modal: NzModalService,
-              private viewContainerRef: ViewContainerRef) {
+  selectedUser: User[] = [];
+
+  constructor(private userAddressBookService: UserAddressBookService) {
   }
 
   title = 'address-book-sample';
 
-
   openAddressBookDialog() {
-    const modal = this.modal.create({
-      nzTitle: '人员地址簿',
-      nzContent: UserAddressBookComponent,
-      nzViewContainerRef: this.viewContainerRef,
-      nzGetContainer: () => document.body,
-      nzComponentParams: {
-        selectedUsers: [],
-      },
-      nzOnOk: () => new Promise(resolve => setTimeout(resolve, 1000)),
-      nzFooter: [
-        {
-          label: '取消',
-          onClick: () => {
-          }
-        },
-        {
-          label: '确认',
-          onClick: () => {
-          }
-        }
-      ]
+    this.userAddressBookService.select(this.selectedUser).subscribe(res => {
+      this.selectedUser = res;
     });
   }
 }
