@@ -1,6 +1,8 @@
 <div class="user-address-book-wrapper">
 
   <div class="org-select-wrapper">
+    <div class="org-tree-label">机构选择</div>
+
     <div class="org-tree-wrapper">
       <app-org-tree-selector (checkOrg)="getUsersUnderOrg($event)"></app-org-tree-selector>
     </div>
@@ -8,10 +10,10 @@
     <div class="user-search-wrapper">
       <nz-input-group [nzSuffix]="suffixTemplate"
                       [nzPrefix]="prefixTemplate">
-        <input type="text" nz-input placeholder="姓名/ID/员工编号">
+        <input [(ngModel)]="keyWord" type="text" nz-input placeholder="员工编号/姓名">
       </nz-input-group>
       <ng-template #suffixTemplate>
-        <em nz-icon nzType="search" nzTheme="outline"></em>
+        <em nz-icon nzType="search" nzTheme="outline" (click)="searchUser()" class="pointer"></em>
       </ng-template>
       <ng-template #prefixTemplate>
         <em nz-icon nzType="user" nzTheme="outline"></em>
@@ -20,6 +22,7 @@
   </div>
 
   <div class="user-wrapper">
+    <div class="user-scope-label">用户列表</div>
     <div class="user-list-wrapper">
       <div class="user-item" *ngFor="let user of scopeUsers"
            (click)="selectUser(user)" [class.active]="isSelected(user)">
@@ -29,7 +32,7 @@
       </div>
     </div>
 
-    <div class="add-all-wrapper">
+    <div class="add-all-wrapper" (click)="addAll()">
       <em nz-icon nzType="usergroup-add" nzTheme="outline"></em>全部添加
     </div>
   </div>

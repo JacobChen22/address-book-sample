@@ -11,9 +11,12 @@
     .org-select-wrapper {
       @extend .basic-list-layout;
 
+      .org-tree-label {
+        @extend .label-info;
+      }
+
       .org-tree-wrapper {
-        overflow: auto;
-        height: 100%;
+        @extend .list-window;
       }
 
       .user-search-wrapper {
@@ -24,9 +27,12 @@
     .user-wrapper {
       @extend .basic-list-layout;
 
+      .user-scope-label {
+        @extend .label-info;
+      }
+
       .user-list-wrapper {
-        overflow: auto;
-        height: 100%;
+        @extend .list-window;
       }
 
       .user-item {
@@ -87,4 +93,23 @@
   height: 290px;
   padding: 5px;
   flex-direction: column;
+  position: relative;
+}
+
+.list-window {
+  overflow: auto;
+  height: 100%;
+}
+
+.label-info {
+  position: absolute;
+  top: -16px;
+  left: 18px;
+  background-color: white;
+  color: #21a5c3;
+  padding: 2px;
+}
+
+.pointer {
+  cursor: pointer;
 }

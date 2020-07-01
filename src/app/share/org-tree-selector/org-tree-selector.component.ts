@@ -20,21 +20,19 @@ export class OrgTreeSelectorComponent implements OnInit {
     this.treeData = [this.orgService.getRootOrg()];
   }
 
-  // TODO: need optimize
-  mouseAction(event: NzFormatEmitEvent) {
+  queryNodeChild(event: NzFormatEmitEvent) {
     const node = event.node;
-    if (event.eventName === 'expand') {
-      if (node && node.getChildren().length === 0 && node.isExpanded) {
-        this.orgService.loadChildren(node.key).subscribe(child => {
-          node.addChildren(child);
-          if (!child || child.length === 0) {
-            node.isLeaf = true;
-          }
-        });
-      }
+    if (node && node.getChildren().length === 0 && node.isExpanded) {
+      this.orgService.loadChildren(node.key).subscribe(child => {
+        node.addChildren(child);
+        if (!child || child.length === 0) {
+          node.isLeaf = true;
+        }
+      });
     }
-    if (event.eventName === 'click') {
-      this.checkOrg.emit(node.key);
-    }
+  }
+
+  searchUserByOrg(event: NzFormatEmitEvent) {
+    this.checkOrg.emit(event.node.key);
   }
 }

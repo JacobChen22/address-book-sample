@@ -1,6 +1,6 @@
 <nz-tree [nzData]="treeData"
          [nzAsyncData]="true"
          [nzShowLine]="true"
-         (nzClick)="mouseAction($event)"
-         (nzExpandChange)="mouseAction($event)">
+         (nzClick)="searchUserByOrg($event)"
+         (nzExpandChange)="queryNodeChild($event)">
 </nz-tree>

@@ -10,6 +10,14 @@ export class UserService {
   }
 
   getUsersByOrgId(selectedOrgId: string): Observable<User[]> {
-    return this.http.get<User[]>(`/url`);
+    return this.http.get<User[]>(`/user/orgId/${selectedOrgId}`);
+  }
+
+  searchUsersByKeyWord(keyWord: string) {
+    return this.http.get<User[]>(`/user/search`, {
+      params: {
+        keyWord
+      }
+    });
   }
 }

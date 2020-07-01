@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {User} from '../../model/user';
 import {UserService} from '../service/user.service';
 
@@ -11,6 +11,7 @@ export class UserAddressBookComponent implements OnInit {
 
   scopeUsers: User[] = [];
   selectedUsers: User[] = [];
+  keyWord: string;
 
   constructor(private userService: UserService) {
   }
@@ -34,5 +35,19 @@ export class UserAddressBookComponent implements OnInit {
 
   isSelected(user: User): boolean {
     return !!this.selectedUsers.find($user => $user.userId === user.userId);
+  }
+
+  addAll() {
+    this.selectedUsers = [...this.scopeUsers];
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  searchUser(key?: KeyboardEvent) {
+    if (key && key.key !== 'Enter') {
+      return;
+    }
+    this.userService.searchUsersByKeyWord(this.keyWord).subscribe(users => {
+      this.scopeUsers = users;
+    });
   }
 }
