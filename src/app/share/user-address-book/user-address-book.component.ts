@@ -1,6 +1,7 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnInit, Optional} from '@angular/core';
 import {User} from '../../model/user';
 import {UserService} from '../service/user.service';
+import {NzModalRef} from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-user-address-book',
@@ -10,10 +11,12 @@ import {UserService} from '../service/user.service';
 export class UserAddressBookComponent implements OnInit {
 
   scopeUsers: User[] = [];
+  @Input()
   selectedUsers: User[] = [];
   keyWord: string;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,
+              @Optional() private modalRef: NzModalRef) {
   }
 
   ngOnInit(): void {
@@ -49,5 +52,13 @@ export class UserAddressBookComponent implements OnInit {
     this.userService.searchUsersByKeyWord(this.keyWord).subscribe(users => {
       this.scopeUsers = users;
     });
+  }
+
+  submit() {
+    this.modalRef.close(this.selectedUsers);
+  }
+
+  cancel() {
+    this.modalRef.close(false);
   }
 }
