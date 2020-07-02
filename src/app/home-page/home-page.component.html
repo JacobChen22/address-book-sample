@@ -1,4 +1,29 @@
-<button nz-button nzType="primary" nzShape="round"
-        (click)="openAddressBookDialog()">选择人员
-</button>
-{{selectedUser | json}}
+<div class="page-wrapper">
+  <div class="title-wrapper">
+    <span>User Address Book Sample</span>
+  </div>
+
+  <div class="sample-body-wrapper">
+    <div class="modal-sample-wrapper">
+      <div class="modal-sample-tab-wrapper">use service to open modal</div>
+      <div class="modal-sample-body-wrapper">
+        <button nz-button nzType="primary" nzShape="round"
+                (click)="openAddressBookDialog()">choose user
+        </button>
+      </div>
+    </div>
+
+    <div class="form-control-sample-wrapper">
+      <div class="form-control-sample-tab-wrapper">work as a form control</div>
+      <div class="form-control-sample-body-wrapper">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="selected-value-wrapper">
+    {{selectedUser | json}}
+  </div>
+</div>
+
+

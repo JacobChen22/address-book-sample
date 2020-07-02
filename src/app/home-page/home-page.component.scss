@@ -1,0 +1,40 @@
+:host {
+  .page-wrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .title-wrapper {
+      display: flex;
+      justify-content: center;
+      border: 1px solid #e8e8e8;
+      padding: 7px;
+      margin: 16px;
+    }
+
+    .sample-body-wrapper {
+      display: flex;
+      border: 1px solid #e8e8e8;
+      padding: 7px;
+      margin: 16px;
+      height: 500px;
+
+      .modal-sample-wrapper {
+        flex: 1;
+      }
+
+      .form-control-sample-wrapper {
+        flex: 1;
+      }
+    }
+
+    .selected-value-wrapper {
+      display: flex;
+      border: 1px solid #e8e8e8;
+      padding: 7px;
+      margin: 16px;
+      justify-content: center;
+    }
+  }
+}

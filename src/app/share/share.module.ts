@@ -15,12 +15,14 @@ import {
 import {UserService} from './service/user.service';
 import {OrgService} from './service/org.service';
 import {UserAddressBookService} from './service/user-address-book.service';
+import {UserSelectorComponent} from './user-selector/user-selector.component';
 
 
 @NgModule({
   declarations: [
     OrgTreeSelectorComponent,
-    UserAddressBookComponent
+    UserAddressBookComponent,
+    UserSelectorComponent
   ],
   imports: [
     CommonModule,
