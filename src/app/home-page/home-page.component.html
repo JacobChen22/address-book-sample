@@ -16,13 +16,19 @@
     <div class="form-control-sample-wrapper">
       <div class="form-control-sample-tab-wrapper">work as a form control</div>
       <div class="form-control-sample-body-wrapper">
-
+        <form [formGroup]="form">
+          <app-user-selector formControlName="users"></app-user-selector>
+        </form>
       </div>
     </div>
   </div>
 
   <div class="selected-value-wrapper">
-    {{selectedUser | json}}
+    value format:
+    <ng-container *ngIf="form">
+      {{form.value.users | json}}
+    </ng-container>
+
   </div>
 </div>
 

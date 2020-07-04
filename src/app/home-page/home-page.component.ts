@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserAddressBookService} from '../share/service/user-address-book.service';
-import {User} from '../model/user';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-home-page',
@@ -9,17 +9,21 @@ import {User} from '../model/user';
 })
 export class HomePageComponent implements OnInit {
 
-  selectedUser: User[] = [];
+  form: FormGroup;
 
-  constructor(private userAddressBookService: UserAddressBookService) {
+  constructor(private userAddressBookService: UserAddressBookService,
+              private fb: FormBuilder) {
   }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      users: this.fb.control([])
+    });
   }
 
   openAddressBookDialog() {
-    this.userAddressBookService.select(this.selectedUser).subscribe(res => {
-      this.selectedUser = res;
+    this.userAddressBookService.select(this.form.value.users).subscribe(res => {
+      this.form.controls.users.patchValue(res);
     });
   }
 }

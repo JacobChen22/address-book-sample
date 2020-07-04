@@ -21,11 +21,11 @@
       height: 500px;
 
       .modal-sample-wrapper {
-        flex: 1;
+        @extend .sample-body;
       }
 
       .form-control-sample-wrapper {
-        flex: 1;
+        @extend .sample-body;
       }
     }
 
@@ -37,4 +37,11 @@
       justify-content: center;
     }
   }
+}
+
+.sample-body {
+  flex: 1;
+  border: 1px solid #e8e8e8;
+  padding: 14px;
+  margin: 16px;
 }
