@@ -10,11 +10,11 @@ export class UserService {
   }
 
   getUsersByOrgId(selectedOrgId: string): Observable<User[]> {
-    return this.http.get<User[]>(`/user/orgId/${selectedOrgId}`);
+    return this.http.get<User[]>(`/identity-server/user/orgId/${selectedOrgId}`);
   }
 
   searchUsersByKeyWord(keyWord: string) {
-    return this.http.get<User[]>(`/user/search`, {
+    return this.http.get<User[]>('/identity-server/user/search', {
       params: {
         keyWord
       }

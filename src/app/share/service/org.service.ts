@@ -16,7 +16,7 @@ export class OrgService {
   }
 
   loadChildren(parentKey: string): Observable<NzTreeNodeOptions[]> {
-    return this.http.get<Organization[]>(`/organization/child/${parentKey}`)
+    return this.http.get<Organization[]>(`/identity-server/organization/child/${parentKey}`)
       .pipe(
         map(res => this.mapOrgToTreeNode(res))
       );

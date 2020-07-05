@@ -13,7 +13,7 @@ export class UserAddressBookService {
   public select(users: User[]): Observable<User[]> {
     const result = new Subject<User[]>();
     this.modalService.create({
-      nzTitle: '选择人员',
+      nzTitle: 'Select Users',
       nzContent: UserAddressBookComponent,
       nzWidth: '580px',
       nzMaskClosable: false,
