@@ -8,6 +8,7 @@ import {CoreModule} from './core/core.module';
 import {ShareModule} from './share/share.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HomePageModule} from './home-page/home-page.module';
+import {AppRoutingModule} from './app-routing.module';
 
 registerLocaleData(zh);
 
@@ -16,10 +17,11 @@ registerLocaleData(zh);
     AppComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
     ShareModule,
-    HomePageModule,
+    HomePageModule
   ],
   providers: [{provide: NZ_I18N, useValue: zh_CN}],
   bootstrap: [AppComponent]
