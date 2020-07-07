@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {NzFormatEmitEvent, NzTreeNodeOptions} from 'ng-zorro-antd';
+import {NzFormatEmitEvent, NzTreeNode, NzTreeNodeOptions} from 'ng-zorro-antd';
 import {OrgService} from '../service/org.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class OrgTreeSelectorComponent implements OnInit {
 
   queryNodeChild(event: NzFormatEmitEvent) {
     const node = event.node;
-    if (node && node.getChildren().length === 0 && node.isExpanded) {
+    if (this.nodeMaybeLeafAndExpanded(node)) {
       this.orgService.loadChildren(node.key).subscribe(child => {
         node.addChildren(child);
         if (!child || child.length === 0) {
@@ -30,6 +30,10 @@ export class OrgTreeSelectorComponent implements OnInit {
         }
       });
     }
+  }
+
+  private nodeMaybeLeafAndExpanded(node: NzTreeNode) {
+    return node && node.getChildren().length === 0 && node.isExpanded;
   }
 
   searchUserByOrg(event: NzFormatEmitEvent) {

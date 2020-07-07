@@ -45,13 +45,17 @@ export class UserAddressBookComponent implements OnInit {
   }
 
   @HostListener('document:keydown', ['$event'])
-  searchUser(key?: KeyboardEvent) {
-    if (key && key.key !== 'Enter') {
+  searchUser(keyboardEvent?: KeyboardEvent) {
+    if (this.notEnterEvent(keyboardEvent)) {
       return;
     }
     this.userService.searchUsersByKeyWord(this.keyWord).subscribe(users => {
       this.scopeUsers = users;
     });
+  }
+
+  private notEnterEvent(keyboardEvent: KeyboardEvent) {
+    return keyboardEvent && keyboardEvent.key !== 'Enter';
   }
 
   submit() {

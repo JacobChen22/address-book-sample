@@ -1,20 +1,20 @@
 <div class="page-wrapper">
   <div class="title-wrapper">
-    <span>User Address Book Sample</span>
+    <h2>User Address Book Sample</h2>
   </div>
 
   <div class="sample-body-wrapper">
     <div class="modal-sample-wrapper">
-      <div class="modal-sample-tab-wrapper">use service to open modal</div>
+      <div class="label-info-wrapper">use service to open modal</div>
       <div class="modal-sample-body-wrapper">
-        <button nz-button nzType="primary" nzShape="round"
+        <button nz-button nzType="primary"
                 (click)="openAddressBookDialog()">choose user
         </button>
       </div>
     </div>
 
     <div class="form-control-sample-wrapper">
-      <div class="form-control-sample-tab-wrapper">work as a form control</div>
+      <div class="label-info-wrapper">work as a form control</div>
       <div class="form-control-sample-body-wrapper">
         <form [formGroup]="form">
           <app-user-selector formControlName="users"></app-user-selector>
