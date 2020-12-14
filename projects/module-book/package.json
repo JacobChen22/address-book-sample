@@ -4,7 +4,7 @@
   "peerDependencies": {
     "@angular/common": "^9.1.11",
     "@angular/core": "^9.1.11",
-    "ng-zorro-antd": "9.1.2",
+    "ng-zorro-antd": "^10.2.1",
     "rxjs": "~6.5.4"
   },
   "dependencies": {
