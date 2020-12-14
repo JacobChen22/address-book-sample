@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HomePageComponent} from './home-page.component';
 import {NzButtonModule} from 'ng-zorro-antd';
-import {ShareModule} from '../share/share.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import {ModuleBookModule} from 'module-book';
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     CommonModule,
     ReactiveFormsModule,
     NzButtonModule,
-    ShareModule
+    ModuleBookModule
   ]
 })
 export class HomePageModule {

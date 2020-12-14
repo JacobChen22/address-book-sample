@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {NzTreeNodeOptions} from 'ng-zorro-antd';
-import {Organization} from '../../model/organization';
+import {Organization} from '../model/organization';
 
 @Injectable()
 export class OrgService {

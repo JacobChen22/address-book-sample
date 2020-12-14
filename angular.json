@@ -130,6 +130,46 @@
           }
         }
       }
+    },
+    "module-book": {
+      "projectType": "library",
+      "root": "projects/module-book",
+      "sourceRoot": "projects/module-book/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/module-book/tsconfig.lib.json",
+            "project": "projects/module-book/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/module-book/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/module-book/src/test.ts",
+            "tsConfig": "projects/module-book/tsconfig.spec.json",
+            "karmaConfig": "projects/module-book/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/module-book/tsconfig.lib.json",
+              "projects/module-book/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "address-book"

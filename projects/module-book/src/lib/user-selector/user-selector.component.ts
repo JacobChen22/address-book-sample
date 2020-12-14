@@ -1,8 +1,8 @@
-import {Component, forwardRef, HostListener, Input, OnInit} from '@angular/core';
-import {fromEvent, Subject} from 'rxjs';
+import {Component, forwardRef, OnInit} from '@angular/core';
+import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 import {UserService} from '../service/user.service';
-import {User} from '../../model/user';
+import {User} from '../model/user';
 import {UserAddressBookService} from '../service/user-address-book.service';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 

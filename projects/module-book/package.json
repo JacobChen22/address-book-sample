@@ -1,0 +1,13 @@
+{
+  "name": "module-book",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^9.1.11",
+    "@angular/core": "^9.1.11",
+    "ng-zorro-antd": "9.1.2",
+    "rxjs": "~6.5.4"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
+  }
+}

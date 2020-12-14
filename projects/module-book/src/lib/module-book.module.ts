@@ -1,19 +1,18 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {OrgTreeSelectorComponent} from './org-tree-selector/org-tree-selector.component';
 import {UserAddressBookComponent} from './user-address-book/user-address-book.component';
+import {OrgTreeSelectorComponent} from './org-tree-selector/org-tree-selector.component';
+import {UserSelectorComponent} from './user-selector/user-selector.component';
+import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import {NzButtonModule, NzIconModule, NzInputModule, NzModalModule, NzModalService, NzSelectModule, NzTreeModule} from 'ng-zorro-antd';
 import {UserService} from './service/user.service';
 import {OrgService} from './service/org.service';
 import {UserAddressBookService} from './service/user-address-book.service';
-import {UserSelectorComponent} from './user-selector/user-selector.component';
-
+import {NzButtonModule, NzIconModule, NzInputModule, NzModalModule, NzModalService, NzSelectModule, NzTreeModule} from 'ng-zorro-antd';
 
 @NgModule({
   declarations: [
-    OrgTreeSelectorComponent,
     UserAddressBookComponent,
+    OrgTreeSelectorComponent,
     UserSelectorComponent
   ],
   imports: [
@@ -24,11 +23,11 @@ import {UserSelectorComponent} from './user-selector/user-selector.component';
     NzIconModule,
     NzSelectModule,
     NzModalModule,
-    NzButtonModule,
+    NzButtonModule
   ],
   exports: [
-    OrgTreeSelectorComponent,
     UserAddressBookComponent,
+    OrgTreeSelectorComponent,
     UserSelectorComponent
   ],
   providers: [
@@ -38,5 +37,5 @@ import {UserSelectorComponent} from './user-selector/user-selector.component';
     UserAddressBookService
   ]
 })
-export class ShareModule {
+export class ModuleBookModule {
 }

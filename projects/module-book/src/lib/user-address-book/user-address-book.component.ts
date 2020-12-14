@@ -1,5 +1,5 @@
 import {Component, HostListener, Input, OnInit, Optional} from '@angular/core';
-import {User} from '../../model/user';
+import {User} from '../model/user';
 import {UserService} from '../service/user.service';
 import {NzModalRef} from 'ng-zorro-antd';
 

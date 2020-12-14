@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {UserAddressBookService} from '../share/service/user-address-book.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {UserAddressBookService} from 'module-book';
 
 @Component({
   selector: 'app-home-page',
