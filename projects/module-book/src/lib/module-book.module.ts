@@ -7,7 +7,12 @@ import {FormsModule} from '@angular/forms';
 import {UserService} from './service/user.service';
 import {OrgService} from './service/org.service';
 import {UserAddressBookService} from './service/user-address-book.service';
-import {NzButtonModule, NzIconModule, NzInputModule, NzModalModule, NzModalService, NzSelectModule, NzTreeModule} from 'ng-zorro-antd';
+import {NzTreeModule} from 'ng-zorro-antd/tree';
+import {NzSelectModule} from 'ng-zorro-antd/select';
+import {NzIconModule} from 'ng-zorro-antd/icon';
+import {NzInputModule} from 'ng-zorro-antd/input';
+import {NzModalModule, NzModalService} from 'ng-zorro-antd/modal';
+import {NzButtonModule} from 'ng-zorro-antd/button';
 
 @NgModule({
   declarations: [

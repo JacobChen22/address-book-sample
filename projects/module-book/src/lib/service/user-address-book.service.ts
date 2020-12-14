@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {NzModalService} from 'ng-zorro-antd';
 import {Observable, Subject} from 'rxjs';
 import {User} from '../model/user';
 import {UserAddressBookComponent} from '../user-address-book/user-address-book.component';
+import {NzModalService} from 'ng-zorro-antd/modal';
 
 @Injectable()
 export class UserAddressBookService {
